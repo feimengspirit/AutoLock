@@ -9,13 +9,13 @@
 	dispatch_semaphore_t s_sema = dispatch_semaphore_create(1);
 	void func1()
 	{
-	    LOCK_WITH(sema);
+	    LOCK_WITH(s_sema);
 	    ...
 	}
 	
 	void func2()
 	{
-	    LOCK_WITH(sema);
+	    LOCK_WITH(s_sema);
 	    ...
 	}
 经过上述调用即可保证func1和func2的互斥执行。
